@@ -13,6 +13,8 @@ function App() {
       .then((response) => {
         //console.log(response)
         const joke = response.data.contents.jokes[0].joke
+        setTitle(joke.title);
+        setText(joke.text);
       }).catch(error => {
         console.log(error)
         alert("Retrieving joke of the day failed")
